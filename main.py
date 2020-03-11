@@ -8,6 +8,10 @@ from program import users
 app = Flask(__name__)
 user = users()
 
+@app.route('/')
+def index():
+    return render_template('index.html', user=user)
+
 @app.route('/register', methods=['GET', 'POST'])
 def create_user():
     if request.method == 'POST':
