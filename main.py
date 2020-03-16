@@ -6,19 +6,20 @@ from program import users
 
 
 app = Flask(__name__)
-user = users()
+#user = users()
 
 @app.route('/')
 def index():
-    return render_template('index.html', user=user)
+    return render_template('index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def create_user():
     if request.method == 'POST':
-        name = varchar(request.form["name"])
-        email = varchar(request.form["email"])
-        password = varchar(request.form["password"])
-        user.add_user(name, email, password)
+        id_user = 1
+        name = request.form["name"]
+        email = request.form["email"]
+        password = request.form["password"]
+        users.add_user(id_user, name, email, password)
         return redirect('/')
     else:
         return render_template('register.html')
