@@ -4,7 +4,11 @@ class users:
     def __init__(self):
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
-    def add_user(self, id_user, name, email, password):
+    def add_user(self, name, email, password):
         sql = "insert into users (name, email, password) \
         value ({}, {}, {})".format(name, email, password)
-        self.db.run(sql)
+        self.DB.run(sql)
+
+    #def login(self, email, password):
+    #    leer_email = DB.query(f'SELECT email FROM users WHERE email = "{email}"')
+    #    leer_password = DB.query(f'SELECT password FROM users WHERE password = "{password}"')
