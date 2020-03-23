@@ -1,0 +1,18 @@
+[23/03/2020 19:07:36] : insert into users (name, email, password)         value (javier, javier@javier.com, 12345)
+[23/03/2020 19:14:16] : insert into users (name, email, password)         value (fgjhjh, javier@javier.com, 12345)
+[23/03/2020 19:15:05] : insert into users (name, email, password)         value ('fgjhjh', 'javier@javier.com', '12345')
+[23/03/2020 19:29:00] : insert into users (name, email, password)         value ('pepe', 'pepe@pepe.com', '1234')
+[23/03/2020 20:02:19] : SELECT email FROM users WHERE email = "pero@pero.com"
+[23/03/2020 20:02:19] : SELECT password FROM users WHERE password = "asdfafd"
+[23/03/2020 20:04:45] : SELECT email FROM users WHERE email = "pero@pero.com"
+[23/03/2020 20:04:45] : SELECT password FROM users WHERE password = "2121"
+[23/03/2020 20:08:50] : SELECT email FROM users WHERE email = "pero@pero.com"
+[23/03/2020 20:08:50] : SELECT password FROM users WHERE password = "asdfsadf"
+[23/03/2020 20:12:38] : SELECT email FROM users WHERE email = "pero@pero.com"
+[23/03/2020 20:12:38] : SELECT password FROM users WHERE password = "asdfsadf"
+[23/03/2020 20:12:42] : SELECT email FROM users WHERE email = "pero@pero.com"
+[23/03/2020 20:12:42] : SELECT password FROM users WHERE password = "12341324"
+[23/03/2020 20:14:16] : SELECT email FROM users WHERE email = "asdfasd@asdfasdf.com"
+[23/03/2020 20:14:16] : SELECT password FROM users WHERE password = "asdfadsf"
+[23/03/2020 20:15:00] : SELECT email FROM users WHERE email = "asdfasd@asdfasdf.com"
+[23/03/2020 20:15:00] : SELECT password FROM users WHERE password = "asdfadsf"

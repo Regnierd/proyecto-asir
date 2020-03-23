@@ -2,21 +2,13 @@ from flask import Flask
 from flask import render_template
 from flask import redirect
 from flask import request
-from program import users
+from program import users, loggins
 
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        try:
-            email = request.form["email"]
-            password = request.form["password"]
-            user.login(email, password)
-        except IndexError:
-            return render_template('index.html', mensaje="No eres usuario")
-
     return render_template('index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -30,6 +22,19 @@ def create_user():
         return redirect('/')
     else:
         return render_template('register.html')
+
+@app.route('/index', methods=['GET', 'POST'])
+def connected():
+    if request.method == 'POST':
+        try:
+            email = request.form["email"]
+            password = request.form["password"]
+            log = loggins(email, password)
+            log.login()
+            return render_template('principal.html')
+
+        except IndexError:
+            return render_template('index.html', message='No estas registrado')
 
 if __name__ == "__main__":
     app.run(debug = True)
