@@ -6,7 +6,6 @@ from program import users
 
 
 app = Flask(__name__)
-#user = users()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -26,8 +25,8 @@ def create_user():
         name = request.form["name"]
         email = request.form["email"]
         password = request.form["password"]
-        print(name, email, password)
-        users.add_user(name, email, password)
+        user = users(name, email, password)
+        user.add_user()
         return redirect('/')
     else:
         return render_template('register.html')
