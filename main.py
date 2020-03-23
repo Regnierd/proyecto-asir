@@ -20,12 +20,13 @@ def index():
 
     return render_template('index.html')
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def create_user():
     if request.method == 'POST':
         name = request.form["name"]
         email = request.form["email"]
         password = request.form["password"]
+        print(name, email, password)
         users.add_user(name, email, password)
         return redirect('/')
     else:

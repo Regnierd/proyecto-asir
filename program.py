@@ -4,7 +4,7 @@ class users:
     def __init__(self):
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
-    def add_user(self, name, email, password):
+    def add_user(self, user=name, correo=email, pass1=password):
         sql = "insert into users (name, email, password) \
         value ({}, {}, {})".format(name, email, password)
         self.DB.run(sql)
