@@ -16,3 +16,7 @@
 [23/03/2020 20:14:16] : SELECT password FROM users WHERE password = "asdfadsf"
 [23/03/2020 20:15:00] : SELECT email FROM users WHERE email = "asdfasd@asdfasdf.com"
 [23/03/2020 20:15:00] : SELECT password FROM users WHERE password = "asdfadsf"
+[24/03/2020 21:01:03] : insert into users (name, email, password)         value ('javier', 'javier@hotmail.es', '12345')
+[24/03/2020 21:01:35] : insert into users (name, email, password)         value ('javier', 'javier@hotmail.es', '12345')
+[24/03/2020 21:02:43] : insert into users (name, email, password)         value ('javier', 'javier@hotmail.es', '12345')
+[24/03/2020 21:03:29] : insert into users (name, email, password)         value ('javier', 'javier@hotmail.es', '12345')
