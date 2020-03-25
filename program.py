@@ -16,7 +16,7 @@ def write_log(msg):
         open(os.path.dirname(os.path.abspath(__file__))+"/logs/log.txt", "w").close()
         exit()
 
-class users:
+class User:
     def __init__(self, name, email, password):
         self.name = name
         self.email = email
@@ -26,21 +26,18 @@ class users:
     def add_user(self):
         sql = "insert into users (name, email, password) \
         values ('%s', '%s', '%s')" % (self.name, self.email, self.password)
+        #print(sql)
         write_log(sql)
         self.db.run(sql)
 
-class loggins:
+class Login:
     def __init__(self, email, password):
         self.email = email
         self.password = password
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
     def login(self):
-        sql = f'SELECT email, password FROM users WHERE email = "{self.email}" \
-        and password = "{self.password}"'
+        sql = f'SELECT password FROM users WHERE password = "{self.password}"'
         self.db.run(sql)
-
-        if (sql[0] != self.email) or (sql[1] != self.password):
-            print("No estas registrado")
 
         write_log(sql)

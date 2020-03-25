@@ -49,3 +49,21 @@
 [25/03/2020 13:26:39] : insert into users (name, email, password)         values ('javier', 'javier@hotmail.es', 'b'$2b$12$UmufNK7i9w29uz9bhvN6XeYxjow1EWlJb7s8TQsPZc5K5XvhvO8dO'')
 [25/03/2020 13:33:33] : insert into users (name, email, password)         values ('javier', 'javier@javier.com', 'b'$2b$12$1jg02cDY1qyPuGZrfuKvdu.7v2sV.58nvNSNmF8Ym7pB6ux0uNMgu'')
 [25/03/2020 13:35:21] : insert into users (name, email, password)         values ('javier', 'javier@javier.com', 'b'$2b$12$yh22Hx2NJFGXUsdFRU/KnOh1yYFvje6NfnlpbUHhwkHdm/iWOzohS'')
+[25/03/2020 13:59:31] : insert into users (name, email, password)         values ('javier', 'javier@hotmail.es', 'b'$2b$12$/cikArvg5kML5CNCD/VbsejjAzG6n4gn56tD.lax1MyIw9wecp/SS'')
+[25/03/2020 14:01:38] : insert into users (name, email, password)         values ('javier', 'javier@hotmail.es', 'b'$2b$12$1SbLotm.I5UzxY9GETQOY.m./NpcQZimHFEwYQQu3sxYbMxbGqsv2'')
+[25/03/2020 15:36:35] : insert into users (name, email, password)         values ('javier', 'javier@hotmail.es', 'b'$2b$12$y.hPO1VYmpl2UkExccSKh.kMA4T4ft8.sTojAiapLjj4ObI9cECsi'')
+[25/03/2020 15:37:44] : insert into users (name, email, password)         values ('javier', 'javier@hotmail.es', 'b'$2b$12$b31FbAjW.V.GoXbfJkJr4.B1b8CDSo1dGSGPokwpjP9JavAe0amgK'')
+[25/03/2020 18:16:55] : insert into users (name, email, password)         values ('javier', 'javier@gmail.com', '5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32')
+[25/03/2020 18:17:20] : SELECT email, password FROM users WHERE email = "javier@gmail.com"         and password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"
+[25/03/2020 18:17:26] : SELECT email, password FROM users WHERE email = "javier@gmail.com"         and password = "58fae4b5cb886483d671e2d2b245ea03659a0687bd3b9998118852df03c0c145"
+[25/03/2020 18:18:15] : SELECT email, password FROM users WHERE email = "javier@gmail.com"         and password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"
+[25/03/2020 18:18:29] : SELECT email, password FROM users WHERE email = "javier@gmail.com"         and password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"
+[25/03/2020 18:18:43] : SELECT email, password FROM users WHERE email = "pedro@pedro.es"         and password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"
+[25/03/2020 18:27:19] : insert into users (name, email, password)         values ('pepe', 'pepe@gmail.com', '58fae4b5cb886483d671e2d2b245ea03659a0687bd3b9998118852df03c0c145')
+[25/03/2020 18:27:26] : SELECT password FROM users WHERE password = "58fae4b5cb886483d671e2d2b245ea03659a0687bd3b9998118852df03c0c145"
+[25/03/2020 18:27:33] : SELECT password FROM users WHERE password = "94044f79dc3ab65a88b31d4fed255378907390dc1aa81f522e39bd8006541597"
+[25/03/2020 18:32:08] : SELECT password FROM users WHERE password = "94044f79dc3ab65a88b31d4fed255378907390dc1aa81f522e39bd8006541597"
+[25/03/2020 18:32:14] : SELECT password FROM users WHERE password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"
+[25/03/2020 18:32:26] : SELECT password FROM users WHERE password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"
+[25/03/2020 18:32:45] : SELECT password FROM users WHERE password = "13efde6a62127b090a186fac59a23c6a3a3cd8450033323ca0546b004b711261"
+[25/03/2020 18:32:55] : SELECT password FROM users WHERE password = "5f79a4b6ebbb4e9b84b1e10216da0123f8691b61bbeb8952c4ec8916ede5ed32"

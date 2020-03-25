@@ -4,8 +4,8 @@ from flask import redirect
 from flask import request
 from flask import flash
 from flask import session
-from program import users, loggins
-import bcrypt
+from program import User, Login
+import hashlib
 
 app = Flask(__name__)
 
@@ -29,12 +29,12 @@ def create_user():
         email = request.form["email"]
         password = request.form["password"]
         #codigo para encriptamiento
-        salt = bcrypt.gensalt()
-        password = password.encode()
-        password_encriptada = bcrypt.hashpw(password, salt)
-
+        salt = b'supercalifragilisticoespialidous'
+        password = password.encode('utf-8')
+        dk = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+        password_encriptada = dk.hex()
         #creamos un usuario
-        user = users(name, email, password_encriptada)
+        user = User(name, email, password_encriptada)
         user.add_user()
 
         #Hago un registro de la sesión.
@@ -56,10 +56,16 @@ def connected():
     else:
         email = request.form["email"]
         password = request.form["password"]
-        log = loggins(email, password)
+        salt = b'supercalifragilisticoespialidous'
+        password = password.encode('utf-8')
+        dk = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+        password_encriptada = dk.hex()
+        log = Login(email, password_encriptada)
         log.login()
-        return render_template('principal.html')
-
+        if password_encriptada == dk.hex():
+            return render_template('principal.html')
+        else:
+            return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug = True)
