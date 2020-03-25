@@ -25,7 +25,7 @@ class users:
 
     def add_user(self):
         sql = "insert into users (name, email, password) \
-        value ('%s', '%s', '%s')" % (self.name, self.email, self.password)
+        values ('%s', '%s', '%s')" % (self.name, self.email, self.password)
         write_log(sql)
         self.db.run(sql)
 
@@ -36,12 +36,11 @@ class loggins:
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
     def login(self):
-        leer_email = f'SELECT email FROM users WHERE email = "{self.email}"'
-        leer_password = f'SELECT password FROM users WHERE password = "{self.password}"'
-        self.db.run(leer_email)
-        self.db.run(leer_password)
-        if (leer_email != self.email) or (leer_password != self.password):
+        sql = f'SELECT email, password FROM users WHERE email = "{self.email}" \
+        and password = "{self.password}"'
+        self.db.run(sql)
+
+        if (sql[0] != self.email) or (sql[1] != self.password):
             print("No estas registrado")
 
-        write_log(leer_email)
-        write_log(leer_password)
+        write_log(sql)

@@ -5,19 +5,15 @@ from flask import request
 from flask import flash
 from flask import session
 from program import users, loggins
-#from bcrypt import bcrypt
+import bcrypt
 
 app = Flask(__name__)
 
-#codigo para encriptamiento
-#code = bcrypt.gensalt()
+
 
 @app.route('/')
 def index():
-    if 'name' in session:
-        return render_template('principal.html')
-    else:
-        return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/inicio')
 def inicio():
@@ -32,15 +28,21 @@ def create_user():
         name = request.form["name"]
         email = request.form["email"]
         password = request.form["password"]
-#        password_encode = password_encode.encode("utf-8")
-#        password_encriptada = bcrypt.hashwp(password_encode, code)
-        user = users(name, email, password)
+        #codigo para encriptamiento
+        salt = bcrypt.gensalt()
+        password = password.encode()
+        password_encriptada = bcrypt.hashpw(password, salt)
+
+        #creamos un usuario
+        user = users(name, email, password_encriptada)
         user.add_user()
 
         #Hago un registro de la sesión.
-#        session["name"] = name
-#        session["email"] = email
+        #session["name"] = name
+        #session["email"] = email
+
         return redirect('/index')
+        print(repr(password_encriptada))
     else:
         return render_template('register.html')
 
