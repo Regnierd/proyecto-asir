@@ -7,9 +7,11 @@
   <body>
     <header>
       <div class="">
-        <h1>Bienvenido a YelmoHome</h1>
+        <h1>Bienvenido a YelmoHome {{session["name"]}}</h1>
+          <a href="/salir">
+            <button type="button" name="logout">Cerrar sesión</button>
+          </a>
       </div>
     </header>
-    
   </body>
 </html>

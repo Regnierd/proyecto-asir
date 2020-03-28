@@ -37,7 +37,11 @@ class Login:
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
     def login(self):
-        sql = f'SELECT password FROM users WHERE password = "{self.password}"'
-        self.db.run(sql)
-
+        sql = f'select password, email, name from users where password = "{self.password}" \
+        and email = "{self.email}"'
+        result = self.db.run(sql)
+        try:
+            return result[0]["name"]
+        except IndexError:
+            return None
         write_log(sql)
