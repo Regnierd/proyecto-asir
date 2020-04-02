@@ -31,6 +31,7 @@ def inicio():
 @app.route('/register', methods=['GET', 'POST'])
 def create_user():
     error_user = None
+    success = None
     if request.method == 'GET':
         if 'email' in session:
             return redirect('/principal')
@@ -51,7 +52,8 @@ def create_user():
         user = User(name, email, password_encriptada)
         try:
             user.add_user()
-            return redirect('/')
+            success = "Te has registrado correctamente."
+            return render_template('index.html', success=success)
         except:
             error_user = "El email ya existe."
             return render_template('register.html', error_user=error_user)
@@ -84,8 +86,10 @@ def connected():
 
 @app.route("/salir")
 def disconnect():
+    logout = None
     session.clear()
-    return redirect('/')
+    logout = "Sesión cerrada correctamente."
+    return render_template('index.html', logout=logout)
 
 if __name__ == "__main__":
     app.run(debug = True)
