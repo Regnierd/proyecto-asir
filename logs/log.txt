@@ -115,3 +115,6 @@
 [02/04/2020 13:46:09] : insert into users (name, email, password)         values ('pepe', 'pepe@gmail.com', '9c8ced31a34f0d3e2e48220fac6b60a17ac8c3b7ee335f664487674e7ca91059')
 [02/04/2020 13:50:44] : insert into users (name, email, password)         values ('tino', 'tino@gmail.com', '9a19e7a8822d8934e3cfcab8a20ce265dda363fb4e20b252c26c04e2054c5439')
 [02/04/2020 14:50:58] : insert into users (name, email, password)         values ('pedro', 'pedro@gmail.com', '30bf3298f91837dd60864a0a1ba4e960cf5e785b7811c4f54258fffaa789f025')
+[03/04/2020 13:46:16] : insert into users (name, email, password)         values ('carmen', 'carmen@gmail.com', 'c7146e39dd8f3325d75c5f629ad42a1a570a3ff6c7e7def67443d62ef031d8b4')
+[03/04/2020 14:03:38] : insert into users (name, email, password)         values ('asir', 'asir@gmail.com', 'df1617e63e1a5c5ef15af93b394d1c5d1627c3a5103ae0b338bca691b25ad474')
+[03/04/2020 14:15:18] : insert into users (name, email, password)         values ('carmen', 'carmen@gmail.com', 'c7146e39dd8f3325d75c5f629ad42a1a570a3ff6c7e7def67443d62ef031d8b4')

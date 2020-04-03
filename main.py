@@ -81,7 +81,8 @@ def connected():
             session["email"] = email
             return render_template('principal.html')
         else:
-             error = "Credenciales incorrectas."
+             error = "Credenciales incorrectas o no exite la cuenta. \
+                    Para ello registrese pulsando en el botón de abajo."
         return render_template('index.html', error = error)
 
 @app.route("/salir")
