@@ -1,0 +1,28 @@
+.opciones {
+  height: 78px;
+}
+.opciones b{
+  text-align: center;
+  color:black;
+  background: grey;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+.opciones:hover b{
+  border-bottom: solid 1px black;
+}
+.opcion a{
+  display: none;
+  text-align: center;
+  padding: 10px;
+  border-bottom: solid 1px black;
+}
+.opciones:hover a{
+  display: block;
+  color:black;
+  background: grey;
+  text-decoration: none;
+  font-weight: bold;
+}

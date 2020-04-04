@@ -30,6 +30,8 @@ class User:
         write_log(sql)
         self.db.run(sql)
 
+
+
 class Login:
     def __init__(self, email, password):
         self.email = email
@@ -45,3 +47,17 @@ class Login:
         except IndexError:
             return None
         write_log(sql)
+
+class EditProfile:
+    def __init__(self, name, email, password, session):
+        self.name = name
+        self.email = email
+        self.password = password
+        self.session = session
+        self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
+
+    def edit(self):
+        sql = f"update users set name = {self.name}, email = {self.email}, password = {self.password} \
+        where name = {self.session}"
+        write_log(sql)
+        self.db.run(sql)

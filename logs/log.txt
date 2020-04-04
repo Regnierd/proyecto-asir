@@ -118,3 +118,6 @@
 [03/04/2020 13:46:16] : insert into users (name, email, password)         values ('carmen', 'carmen@gmail.com', 'c7146e39dd8f3325d75c5f629ad42a1a570a3ff6c7e7def67443d62ef031d8b4')
 [03/04/2020 14:03:38] : insert into users (name, email, password)         values ('asir', 'asir@gmail.com', 'df1617e63e1a5c5ef15af93b394d1c5d1627c3a5103ae0b338bca691b25ad474')
 [03/04/2020 14:15:18] : insert into users (name, email, password)         values ('carmen', 'carmen@gmail.com', 'c7146e39dd8f3325d75c5f629ad42a1a570a3ff6c7e7def67443d62ef031d8b4')
+[04/04/2020 21:10:42] : update users set name = Robin, email = , password = d4120d6f51e999c0f45d7ff88cf6236cd300ed7ee8a28125ae6b7314196892c8         where name = javier
+[04/04/2020 21:16:58] : update users set name = Robin, email = , password = d4120d6f51e999c0f45d7ff88cf6236cd300ed7ee8a28125ae6b7314196892c8         where name = javier
+[04/04/2020 21:17:29] : update users set name = Robin, email = , password = d4120d6f51e999c0f45d7ff88cf6236cd300ed7ee8a28125ae6b7314196892c8         where name = javier

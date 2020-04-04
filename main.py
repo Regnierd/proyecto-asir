@@ -5,7 +5,7 @@ from flask import request
 from flask import flash
 from flask import session
 from flask import url_for
-from program import User, Login
+from program import User, Login, EditProfile
 import hashlib
 
 app = Flask(__name__)
@@ -84,6 +84,25 @@ def connected():
              error = "Credenciales incorrectas o no exite la cuenta. \
                     Para ello registrese pulsando en el botón de abajo."
         return render_template('index.html', error = error)
+@app.route("/perfil", methods=['GET', 'POST'])
+def profile():
+    if request.method == 'POST':
+        name = request.form["name"]
+        email = request.form["email"]
+        password = request.form["password"]
+        salt = b'supercalifragilisticoespialidous'
+        password = password.encode('utf-8')
+        dk = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+        password_encriptada = dk.hex()
+        if name != "" and  email != "" and password_encriptada != "":
+            profile = EditProfile(name, email, password_encriptada, session["name"])
+            profile.edit()
+        elif name == "" and email != "" and password_encriptada != "":
+            profile = EditProfile(session["name"], email, password_encriptada, session["name"])
+        elif
+
+        return render_template('principal.html')
+    return render_template('perfil.html')
 
 @app.route("/salir")
 def disconnect():
