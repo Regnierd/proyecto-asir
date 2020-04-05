@@ -57,7 +57,16 @@ class EditProfile:
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
     def edit(self):
-        sql = f"update users set name = {self.name}, email = {self.email}, password = {self.password} \
-        where name = {self.session}"
+        sql = f"update users set name = '{self.name}', email = '{self.email}', password = '{self.password}' \
+        where name = '{self.session}'"
         write_log(sql)
         self.db.run(sql)
+
+class Film:
+    def __init__(self):
+        self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
+
+    def films(self):
+        sql = f"select nombre, img, autor, descripcion, clasificacion, estreno from peliculas;"
+        peliculas = self.db.run(sql)
+        return peliculas

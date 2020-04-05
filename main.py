@@ -5,8 +5,9 @@ from flask import request
 from flask import flash
 from flask import session
 from flask import url_for
-from program import User, Login, EditProfile
+from program import User, Login, EditProfile, Film
 import hashlib
+
 
 app = Flask(__name__)
 
@@ -58,11 +59,12 @@ def create_user():
             error_user = "El email ya existe."
             return render_template('register.html', error_user=error_user)
 
-
 @app.route('/principal', methods=['GET', 'POST'])
 def connected():
     if request.method == 'GET':
         if 'email' in session:
+            film = Film()
+            session["peliculas"] = film.films()
             return render_template('principal.html')
         else:
             return render_template('index.html')
@@ -79,30 +81,61 @@ def connected():
         if datos_log != None:
             session["name"] = datos_log
             session["email"] = email
+            session["password"] = password_encriptada
+            film = Film()
+            session["peliculas"] = film.films()
             return render_template('principal.html')
         else:
              error = "Credenciales incorrectas o no exite la cuenta. \
                     Para ello registrese pulsando en el botón de abajo."
         return render_template('index.html', error = error)
+
 @app.route("/perfil", methods=['GET', 'POST'])
 def profile():
     if request.method == 'POST':
         name = request.form["name"]
         email = request.form["email"]
         password = request.form["password"]
-        salt = b'supercalifragilisticoespialidous'
-        password = password.encode('utf-8')
-        dk = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
-        password_encriptada = dk.hex()
-        if name != "" and  email != "" and password_encriptada != "":
-            profile = EditProfile(name, email, password_encriptada, session["name"])
-            profile.edit()
-        elif name == "" and email != "" and password_encriptada != "":
-            profile = EditProfile(session["name"], email, password_encriptada, session["name"])
-        elif
+        password_encriptada = ""
+        if name == "":
+            name = session["name"]
 
-        return render_template('principal.html')
+
+        if email == "":
+            email = session["email"]
+        else:
+            session["email"] = email
+
+        if password == "":
+            password_encriptada = session["password"]
+        else:
+            salt = b'supercalifragilisticoespialidous'
+            password = password.encode('utf-8')
+            dk = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+            password_encriptada = dk.hex()
+        profile = EditProfile(name, email, password_encriptada, session["name"])
+        profile.edit()
+        if name != "":
+            session["name"] = name
+        return redirect('/principal')
+
     return render_template('perfil.html')
+
+@app.route("/pelicula")
+def showfilm():
+    name = request.args.get("name")
+    peli = None
+    for pelicula in session["peliculas"]:
+        if pelicula["nombre"] == name:
+            fecha = pelicula["estreno"].split(",")[1].split(":")[0]
+            fecha = fecha[0:len(fecha) -2]
+            pelicula["estreno"] = fecha
+            peli = pelicula
+            break
+    if peli == None:
+        return render_template("register.html")
+
+    return render_template("pelicula.html", peli=peli)
 
 @app.route("/salir")
 def disconnect():
