@@ -8,12 +8,9 @@ from flask import url_for
 from program import User, Login, EditProfile, Film
 import hashlib
 
-
 app = Flask(__name__)
 
 app.secret_key = "appLogin"
-
-
 
 @app.route('/')
 def index():
