@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
         {%for p in session["peliculas"] %}
-          <a class="col border text-center" style="padding:20px; margin:10px" href="/pelicula?name={{p['nombre']}}">
+          <a class="col-3 border text-center" style="padding:20px; margin:10px" href="/pelicula?name={{p['nombre']}}">
             <img src="{{p['img']}}" class="w-75"><br>
             <span>{{p['nombre']}}</span>
           </a>
