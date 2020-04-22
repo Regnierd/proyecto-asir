@@ -9,6 +9,11 @@
   <body>
     <header class="d-flex justify-content-between">
         <h1>Bienvenido a YelmoHome </h1>
+        <div class="">
+          <form class="" action="/principal" method="post">
+            <input type="text" name="search" placeholder="Buscar"/>
+          </form>
+        </div>
         <div class="d-flex flex-column opciones">
           <b>{{session["name"]}}</b>
           <div class="opcion">
@@ -19,6 +24,11 @@
           </div>
         </div>
     </header>
+    {%if unknow %}
+    <div class="alert alert-info mx-auto w-25 text-center">
+      <p class="text-center">{{unknow}}</p>
+    </div>
+    {% endif %}
     <div class="container">
       <div class="row">
         {%for p in session["peliculas"] %}

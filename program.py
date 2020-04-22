@@ -67,6 +67,11 @@ class Film:
         self.db = DB("cineAdmin", "p@ssw0rd", "prueba")
 
     def films(self):
-        sql = f"select nombre, img, autor, descripcion, clasificacion, estreno from peliculas;"
+        sql = f"select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas;"
         peliculas = self.db.run(sql)
         return peliculas
+
+    def search(self, search):
+        sql = f"select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%{search}%';"
+        write_log(sql)
+        return self.db.run(sql)

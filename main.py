@@ -6,6 +6,7 @@ from flask import flash
 from flask import session
 from flask import url_for
 from program import User, Login, EditProfile, Film
+import urllib.parse
 import hashlib
 
 app = Flask(__name__)
@@ -56,7 +57,7 @@ def create_user():
             error_user = "El email ya existe."
             return render_template('register.html', error_user=error_user)
 
-@app.route('/principal', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def connected():
     if request.method == 'GET':
         if 'email' in session:
@@ -81,11 +82,27 @@ def connected():
             session["password"] = password_encriptada
             film = Film()
             session["peliculas"] = film.films()
-            return render_template('principal.html')
+            return redirect('/principal')
         else:
              error = "Credenciales incorrectas o no exite la cuenta. \
                     Para ello registrese pulsando en el botón de abajo."
         return render_template('index.html', error = error)
+
+@app.route("/principal", methods=['GET', 'POST'])
+def principal():
+    film = Film()
+    unknow = None
+    try:
+        search = request.form["search"]
+        session["peliculas"] = film.search(search)
+        if len(session["peliculas"]) == 0:
+            unknow = "Pelicula no encontrada"
+            session["peliculas"] = film.films()
+            return render_template('principal.html', unknow=unknow)
+    except:
+        session["peliculas"] = film.films()
+
+    return render_template('principal.html')
 
 @app.route("/perfil", methods=['GET', 'POST'])
 def profile():
@@ -130,7 +147,7 @@ def showfilm():
             peli = pelicula
             break
     if peli == None:
-        return render_template("register.html")
+        return redirect("/principal")
 
     return render_template("pelicula.html", peli=peli)
 

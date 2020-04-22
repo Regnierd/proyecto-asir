@@ -1,5 +1,6 @@
 .opciones {
   height: 78px;
+  z-index: 30;
 }
 .opciones b{
   text-align: center;
