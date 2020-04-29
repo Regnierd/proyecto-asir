@@ -212,3 +212,4 @@
 [22/04/2020 18:18:03] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
 [22/04/2020 18:18:20] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
 [22/04/2020 18:18:37] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
+[29/04/2020 13:18:59] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%do%';
