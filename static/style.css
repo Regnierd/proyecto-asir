@@ -1,20 +1,23 @@
 body{
   /* The image used */
-  background-image: url("img/servidores-donosti.jpg") !important;
+  /*background-image: url("img/servidores-donosti.jpg") !important;*/
   /* Full height */
   height: 100vh;
   /* Center and scale the image nicely */
+  background-image: linear-gradient(black, grey, black);
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
-}
 
-h1{
-  color: blue;
 }
-
+header{
+  margin-top: 50px;
+  text-align: center;
+}
 img{
   width: 400px;
-  margin-top: 25px;
-  margin-left: 25px;
+
+}
+input, button, a{
+  box-shadow: 5px 5px 5px black;
 }
