@@ -1,15 +1,23 @@
+@font-face{
+  font-family: monsterSA;
+  src: url(fonts/monster-ag/MonsterAG.ttf)
+}
+
+/*Header*/
 .opciones {
   height: 78px;
   z-index: 30;
 }
 .opciones b{
   text-align: center;
-  color:black;
-  background: grey;
+  font-family: monsterSA;
+  color:white;
+  background: #b51313;
+
   padding-right: 50px;
   padding-left: 50px;
   padding-top: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
 .opciones:hover b{
   border-bottom: solid 1px black;
@@ -22,17 +30,69 @@
 }
 .opciones:hover a{
   display: block;
-  color:black;
-  background: grey;
+  color:white;
+
+  font-family: monsterSA;
+  background:  #b51313 ;
   text-decoration: none;
   font-weight: bold;
 }
-header img{
-  width: 200px;
-  margin-top: 25px;
-  margin-left: 25px;
+header{
+  background-color: #101213;
+  height: 135px;
+  box-shadow: 0px 5px 5px #131517;
 }
 
+header img{
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 35px;
+}
+
+.header02{
+  margin-right: 10px;
+}
+
+.search input{
+  margin-top: 5px;
+  margin-right: 15px;
+  color: white;
+  background-color: #131517 ;
+  border: 0;
+  border-bottom: 1px solid grey;
+  padding: 7px;
+}
+/*Body principal, pelicula, perfil*/
+body{
+  background-color: #1c1f20;
+  font-family: monsterSA;
+}
+h2{
+  margin-top: 20px;
+
+  color: white;
+}
+.peli{
+  text-decoration: none;
+}
+.nombrePelicula{
+
+  color: white;
+}
 .contenedor-principal{
   margin-top: 25px;
+}
+.infoPeli{
+  color: white;
+
+}
+/*Perfil*/
+label{
+  font-weight: bold;
+  color: white;
+}
+
+button{
+
+  box-shadow: 5px 5px 5px black;
 }

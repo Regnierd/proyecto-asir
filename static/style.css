@@ -1,3 +1,7 @@
+@font-face{
+  font-family: monsterSA;
+  src: url(fonts/monster-ag/MonsterAG.ttf)
+}
 body{
   /* The image used */
   /*background-image: url("img/servidores-donosti.jpg") !important;*/
@@ -8,7 +12,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
-
+  font-family: monsterSA;
 }
 header{
   margin-top: 50px;
@@ -20,4 +24,14 @@ img{
 }
 input, button, a{
   box-shadow: 5px 5px 5px black;
+}
+
+h1, h2{
+  color: white;
+}
+label{
+  font-weight: bold;
+}
+table{
+  margin-top:10%;
 }

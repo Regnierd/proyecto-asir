@@ -213,3 +213,17 @@
 [22/04/2020 18:18:20] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
 [22/04/2020 18:18:37] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
 [29/04/2020 13:18:59] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%do%';
+[04/05/2020 12:11:07] : insert into users (name, email, password)         values ('yery', 'yery@gmail.com', '70d8e649587546cf6c036f881e137b697391a8c8f76acee7138aaa81c2810aac')
+[04/05/2020 13:49:26] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
+[04/05/2020 13:49:58] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
+[04/05/2020 13:50:27] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
+[04/05/2020 13:51:07] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%f%';
+[04/05/2020 13:51:25] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%:%';
+[04/05/2020 13:51:52] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 13:52:18] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 13:54:43] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 13:57:01] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 13:57:23] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 13:59:16] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 14:00:55] : select nombre, img, autor, descripcion, clasificacion, estreno, video from peliculas where nombre like '%%';
+[04/05/2020 14:45:24] : insert into users (name, email, password)         values ('carmen', 'carmen@gmail.com', 'c7146e39dd8f3325d75c5f629ad42a1a570a3ff6c7e7def67443d62ef031d8b4')
